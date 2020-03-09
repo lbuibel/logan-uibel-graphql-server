@@ -1,0 +1,21 @@
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Route {
+  id                String   @default(cuid()) @id
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  name              String
+  type              String
+  miles             Float
+  startPoint        String
+  endPoint          String
+  startingElevation Int
+  finalElevation    Int
+}
