@@ -16,7 +16,7 @@ export const Query = queryType({
       }
     })
 
-    // SEARCHABLE ROUTES BASED ON NAME
+    // SEARCHABLE ROUTES BASED ON PARAMETER
     t.list.field('Routes', {
       type: 'Route',
       args: {
