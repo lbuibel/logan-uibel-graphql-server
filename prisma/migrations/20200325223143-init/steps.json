@@ -168,6 +168,13 @@
       "field": "finalElevation",
       "type": "Int",
       "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Route",
+      "field": "iframeData",
+      "type": "String",
+      "arity": "Required"
     }
   ]
 }

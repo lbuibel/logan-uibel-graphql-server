@@ -14,6 +14,7 @@ type Route {
   endPoint: String!
   finalElevation: Int!
   id: String!
+  iframeData: String!
   miles: Float!
   name: String!
   startingElevation: Int!

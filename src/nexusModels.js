@@ -13,6 +13,7 @@ const Route = objectType({
         t.model.endPoint()
         t.model.startingElevation()
         t.model.finalElevation()
+        t.model.iframeData()
     }
 })
 

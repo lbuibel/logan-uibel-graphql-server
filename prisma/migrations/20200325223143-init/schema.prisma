@@ -18,4 +18,5 @@ model Route {
   endPoint          String
   startingElevation Int
   finalElevation    Int
+  iframeData        String
 }

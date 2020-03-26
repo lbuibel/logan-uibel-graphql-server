@@ -48,6 +48,7 @@ export interface NexusGenFieldTypes {
     endPoint: string; // String!
     finalElevation: number; // Int!
     id: string; // String!
+    iframeData: string; // String!
     miles: number; // Float!
     name: string; // String!
     startingElevation: number; // Int!
