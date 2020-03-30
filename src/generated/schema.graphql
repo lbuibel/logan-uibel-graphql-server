@@ -4,6 +4,10 @@
 
 scalar DateTime
 
+type Mutation {
+  createRoute(endPoint: String, finalElevation: Int, iframeData: String, miles: Float, name: String!, startingElevation: Int, startPoint: String, type: String): Route!
+}
+
 type Query {
   Route(id: ID): Route
   Routes(searchString: String): [Route!]!

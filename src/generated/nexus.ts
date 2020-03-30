@@ -25,6 +25,7 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
+  Mutation: {};
   Query: {};
   Route: prisma.Route;
   String: string;
@@ -39,6 +40,9 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
+  Mutation: { // field return type
+    createRoute: NexusGenRootTypes['Route']; // Route!
+  }
   Query: { // field return type
     Route: NexusGenRootTypes['Route'] | null; // Route
     Routes: NexusGenRootTypes['Route'][]; // [Route!]!
@@ -59,6 +63,18 @@ export interface NexusGenFieldTypes {
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createRoute: { // args
+      endPoint?: string | null; // String
+      finalElevation?: number | null; // Int
+      iframeData?: string | null; // String
+      miles?: number | null; // Float
+      name: string; // String!
+      startingElevation?: number | null; // Int
+      startPoint?: string | null; // String
+      type?: string | null; // String
+    }
+  }
   Query: {
     Route: { // args
       id?: string | null; // ID
@@ -74,7 +90,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Query" | "Route";
+export type NexusGenObjectNames = "Mutation" | "Query" | "Route";
 
 export type NexusGenInputNames = never;
 

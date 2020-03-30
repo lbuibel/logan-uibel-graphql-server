@@ -1,4 +1,4 @@
-import { idArg, mutationType, stringArg } from 'nexus'
+import { idArg, mutationType, stringArg, intArg, floatArg } from 'nexus'
 
 export const Mutation = mutationType({
     name: 'Mutation',
@@ -7,16 +7,16 @@ export const Mutation = mutationType({
             type: 'Route',
             args: {
                 name: stringArg({ nullable: false }),
-                type: stringArg({ nullable: false }),
-                type: stringArg({ nullable: false }),
-                miles: stringArg({ nullable: false }),
-                startPoint: stringArg({ nullable: false }),
-                endPoint: stringArg({ nullable: false }),
-                startingElevation: stringArg({ nullable: false }),
-                finalElevation: stringArg({ nullable: false }),
+                type: stringArg(),
+                miles: floatArg(),
+                startPoint: stringArg(),
+                endPoint: stringArg(),
+                startingElevation: intArg(),
+                finalElevation: intArg(),
+                iframeData: stringArg(),
             },
-            resolve: (parent, { name, type, miles, startPoint, endPoint, startingElevation, finalElevation }, ctx) => {
-                return ctc.prisma.route.create({
+            resolve: (parent, { name, type, miles, startPoint, endPoint, startingElevation, finalElevation, iframeData }, ctx) => {
+                return ctx.prisma.route.create({
                     data: {
                         name,
                         type,
@@ -25,6 +25,7 @@ export const Mutation = mutationType({
                         endPoint,
                         startingElevation,
                         finalElevation,
+                        iframeData,
                     }
                 })
             }
