@@ -6,6 +6,8 @@ scalar DateTime
 
 type Mutation {
   createRoute(endPoint: String, finalElevation: Int, iframeData: String, miles: Float, name: String!, startingElevation: Int, startPoint: String, type: String): Route!
+  deleteOneRoute(where: RouteWhereUniqueInput!): Route
+  updateRoute(endPoint: String, finalElevation: Int, id: ID, iframeData: String, miles: Float, name: String, startingElevation: Int, startPoint: String, type: String): Route!
 }
 
 type Query {
@@ -25,4 +27,8 @@ type Route {
   startPoint: String!
   type: String!
   updatedAt: DateTime!
+}
+
+input RouteWhereUniqueInput {
+  id: String
 }
