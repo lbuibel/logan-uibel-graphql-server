@@ -5,10 +5,10 @@ This project utilizes GraphQL with Node.js, [Prisma](https://github.com/prisma/p
 ## Server Requirements
 - [x] Prisma as your data modeling tool
 - [x] Docker-based PostgreSQL, MySQL, or MongoDB as your data store
-- [x] At least 3 Query resolvers to get data from your server
-- [x] At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
-- [x] At least 1 Mutation resolver allowing users to delete an item.
-- [x] Your datastore will contain at least 25 items
+- [x] At least 3 Query resolvers to get data from your server.  See [query.js](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/src/query.js), specific routes can be searched for based on parameter (line 23) or all of the routes can be returned with this query.
+- [x] At least 2 Mutation resolvers allowing users to create, update, or upsert an item. See [mutation.js](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/src/mutation.js)
+- [x] At least 1 Mutation resolver allowing users to delete an item. See [mutation.js](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/src/mutation.js)
+- [x] Your datastore will contain at least 25 items. [route_data.json](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/prisma/seed_files/route_data.json) & [seed.js](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/prisma/seed.js)
 - [x] Your app will be deployable locally using Docker and will have seed data entered into the datastore.
 - [x] All of your source code will be properly uploaded to GitHub
 - [x] Your ReadMe file will accurately describe your server install and run process and how to use the APIs
