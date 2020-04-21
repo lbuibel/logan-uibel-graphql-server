@@ -9,8 +9,6 @@ const Route = objectType({
         t.model.name()
         t.model.type()
         t.model.miles()
-        t.model.startPoint()
-        t.model.endPoint()
         t.model.startingElevation()
         t.model.finalElevation()
         t.model.iframeData()

@@ -14,8 +14,6 @@ function loadBikeRoutes() {
         name: route.name,
         type: route.type,
         miles: route.miles,
-        startPoint: route.startPoint,
-        endPoint: route.endPoint,
         startingElevation: route.startingElevation,
         finalElevation: route.finalElevation,
         iframeData: route.iframeData

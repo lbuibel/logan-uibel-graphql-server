@@ -47,7 +47,6 @@ export interface NexusGenFieldTypes {
   Mutation: { // field return type
     createRoute: NexusGenRootTypes['Route']; // Route!
     deleteOneRoute: NexusGenRootTypes['Route'] | null; // Route
-    updateRoute: NexusGenRootTypes['Route']; // Route!
   }
   Query: { // field return type
     Route: NexusGenRootTypes['Route'] | null; // Route
@@ -55,14 +54,12 @@ export interface NexusGenFieldTypes {
   }
   Route: { // field return type
     createdAt: any; // DateTime!
-    endPoint: string; // String!
     finalElevation: number; // Int!
     id: string; // String!
     iframeData: string; // String!
     miles: number; // Float!
     name: string; // String!
     startingElevation: number; // Int!
-    startPoint: string; // String!
     type: string; // String!
     updatedAt: any; // DateTime!
   }
@@ -71,28 +68,15 @@ export interface NexusGenFieldTypes {
 export interface NexusGenArgTypes {
   Mutation: {
     createRoute: { // args
-      endPoint?: string | null; // String
       finalElevation?: number | null; // Int
       iframeData?: string | null; // String
       miles?: number | null; // Float
       name: string; // String!
       startingElevation?: number | null; // Int
-      startPoint?: string | null; // String
       type?: string | null; // String
     }
     deleteOneRoute: { // args
       where: NexusGenInputs['RouteWhereUniqueInput']; // RouteWhereUniqueInput!
-    }
-    updateRoute: { // args
-      endPoint?: string | null; // String
-      finalElevation?: number | null; // Int
-      id?: string | null; // ID
-      iframeData?: string | null; // String
-      miles?: number | null; // Float
-      name?: string | null; // String
-      startingElevation?: number | null; // Int
-      startPoint?: string | null; // String
-      type?: string | null; // String
     }
   }
   Query: {
