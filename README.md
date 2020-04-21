@@ -92,7 +92,9 @@ Feel free to adjust any operation by adding or removing fields. The GraphQL Play
 
 ```graphql
 query getRoute {
-  Route(id: __ROUTE_ID__) {
+  route (where: {
+    id: "__ROUTE_ID__"
+  }) {
     id
     name
     type
@@ -176,7 +178,7 @@ mutation deleteRoute {
 
 > **Note**: You need to replace the `__POST_ID__`-placeholder with an actual `id` from a `Post` item. You can find one e.g. using the `allRoutes`-query.
 
-#### Search for posts with a specific title or content
+#### Search for outes with a specific title or content
 
 ```graphql
 query filterRoutes {

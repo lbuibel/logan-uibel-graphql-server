@@ -11,7 +11,7 @@ type Mutation {
 }
 
 type Query {
-  Route(id: ID): Route
+  route(where: RouteWhereUniqueInput!): Route
   Routes(searchString: String): [Route!]!
 }
 

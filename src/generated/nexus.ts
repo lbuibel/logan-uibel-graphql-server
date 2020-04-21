@@ -62,7 +62,7 @@ export interface NexusGenFieldTypes {
     updateOneRoute: NexusGenRootTypes['Route'] | null; // Route
   }
   Query: { // field return type
-    Route: NexusGenRootTypes['Route'] | null; // Route
+    route: NexusGenRootTypes['Route'] | null; // Route
     Routes: NexusGenRootTypes['Route'][]; // [Route!]!
   }
   Route: { // field return type
@@ -97,8 +97,8 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
-    Route: { // args
-      id?: string | null; // ID
+    route: { // args
+      where: NexusGenInputs['RouteWhereUniqueInput']; // RouteWhereUniqueInput!
     }
     Routes: { // args
       searchString?: string | null; // String
