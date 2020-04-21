@@ -125,8 +125,6 @@ mutation createRoute {
     name: "Test Route",
     type: "paved",
     miles: 50
-    startPoint: "40°25'56.6"N 111°44'55.3"W",
-    endPoint: "40°25'51.8"N 111°36'49.6"W",
     startingElevation: 5070,
     finalElevation: 8060,
     iframeData: "https://www.google.com/maps/...
@@ -143,17 +141,17 @@ mutation createRoute {
 
 ```graphql
 mutation updateRoute {
-  updateRoute (
-    id: __ROUTE_ID__,
+  updateOneRoute (where: {
+    id: __ROUTE_ID__
+  },
+  data: {
     name: "Updated Route",
     type: "paved",
     miles: 50,
-    startPoint: "home",
-    endPoint: "work",
     startingElevation: 100,
     finalElevation: 200,
     iframeData: "updated iframe"
-  ) 
+    }) 
   {
     name,
     id,
