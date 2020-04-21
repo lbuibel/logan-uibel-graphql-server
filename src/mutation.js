@@ -4,9 +4,9 @@ export const Mutation = mutationType({
     name: 'Mutation',
     definition(t) {
 
+        t.crud.updateOneRoute()
         t.crud.deleteOneRoute()
-        t.crud.udpateOneRoute()
-        
+            
         t.field('createRoute', {
             type: 'Route',
             args: {

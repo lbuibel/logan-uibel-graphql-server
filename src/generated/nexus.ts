@@ -19,6 +19,17 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  RouteUpdateInput: { // input type
+    createdAt?: any | null; // DateTime
+    finalElevation?: number | null; // Int
+    id?: string | null; // String
+    iframeData?: string | null; // String
+    miles?: number | null; // Float
+    name?: string | null; // String
+    startingElevation?: number | null; // Int
+    type?: string | null; // String
+    updatedAt?: any | null; // DateTime
+  }
   RouteWhereUniqueInput: { // input type
     id?: string | null; // String
   }
@@ -40,6 +51,7 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  RouteUpdateInput: NexusGenInputs['RouteUpdateInput'];
   RouteWhereUniqueInput: NexusGenInputs['RouteWhereUniqueInput'];
 }
 
@@ -47,6 +59,7 @@ export interface NexusGenFieldTypes {
   Mutation: { // field return type
     createRoute: NexusGenRootTypes['Route']; // Route!
     deleteOneRoute: NexusGenRootTypes['Route'] | null; // Route
+    updateOneRoute: NexusGenRootTypes['Route'] | null; // Route
   }
   Query: { // field return type
     Route: NexusGenRootTypes['Route'] | null; // Route
@@ -78,6 +91,10 @@ export interface NexusGenArgTypes {
     deleteOneRoute: { // args
       where: NexusGenInputs['RouteWhereUniqueInput']; // RouteWhereUniqueInput!
     }
+    updateOneRoute: { // args
+      data: NexusGenInputs['RouteUpdateInput']; // RouteUpdateInput!
+      where: NexusGenInputs['RouteWhereUniqueInput']; // RouteWhereUniqueInput!
+    }
   }
   Query: {
     Route: { // args
@@ -96,7 +113,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Mutation" | "Query" | "Route";
 
-export type NexusGenInputNames = "RouteWhereUniqueInput";
+export type NexusGenInputNames = "RouteUpdateInput" | "RouteWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
