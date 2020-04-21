@@ -1,4 +1,4 @@
-# GraphQL Server Example (SDL-first)
+# Utah Bike Route GraphQL Server
 
 This project utilizes GraphQL with Node.js, [Prisma](https://github.com/prisma/prisma2/blob/master/docs/prisma-client-js/api.md), and [apollo-server](https://www.npmjs.com/package/apollo-server), and the [nexus-prisma](https://github.com/graphql-nexus/nexus-schema-plugin-prisma) plugin. It is based on a SQLite database, you can find the database file with some dummy data at [`./prisma/dev.db`](./prisma/dev.db).
 
@@ -20,13 +20,13 @@ This project utilizes GraphQL with Node.js, [Prisma](https://github.com/prisma/p
 Clone this repository:
 
 ```
-git clone https://github.com/lbuibel/DGM4790-graphql-server
+git clone https://github.com/lbuibel/logan-uibel-graphql-server.git
 ```
 
 Install npm dependencies:
 
 ```
-cd DGM4790-graphql-server
+cd logan-uibel-graphql-server
 npm install
 ```
 
@@ -36,22 +36,22 @@ Note that this also generates Prisma Client JS into `node_modules/@prisma/client
 
 *The scripts below can be found in [package.json](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/package.json)
 
-If you already have an exhisting Docker container running, and want to restart, run the `nuke` script.
+If you already have an exhisting Docker container with the same name running, and want to restart, run the `nuke` script.
 
 ```
 npm run nuke
 ```
-
-Create and migrate a new database by running the `generate` script:
-
+Now that your docker is cleared, you'll want to launch a new docker container using:
 ```
-npm nun createDB
+npm run launchDocker
 ```
-
+Now that docker is running, you'll need to create a new database instance and migrate it by running:
+```
+npm run createDB
+```
 Generate the Prisma Client code by running the `generate` npm script:
-
 ```
-npm nun seed
+npm nun generate
 ```
 
 Seed the database by running the `seed` npm script.  This loads 25 individual routes that can be found in [route_data.json](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/prisma/seed_files/route_data.json).
@@ -59,7 +59,7 @@ Seed the database by running the `seed` npm script.  This loads 25 individual ro
 - For how these routes are seeded see [seed.js](https://github.com/lbuibel/DGM4790-graphql-server/blob/master/prisma/seed.js)
 
 ```
-npm nun generate
+npm nun seed
 ```
 </Details>
 
@@ -74,6 +74,13 @@ npm start
 ```
 
 Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
+### 3. Start the GraphQL Dev Server
+
+Launch the development server and view the database using:
+```
+npm run dev
+```
+Navigate to [http://localhost:5555](http://localhost:5555) in your browser to view the prisma studio/databasae
 
 ### 3. Using the GraphQL API
 
