@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:docker@localhost:5432/bike-route-docker?schema=public"
+  url      = env("DB_CONNECT_URL")
 }
 
 generator client {
