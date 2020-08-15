@@ -5,17 +5,8 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-new ApolloServer({ 
-  schema, context: createContext,
-  engine: {
-    reportSchema: true
-  }
-})
-// .listen( { port: process.env.PORT || 4000}, () =>
-//   console.log(
-//     `🚀 Server ready at: http://localhost:${process.env.PORT}`,
-//   ),
-// )
-.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+new ApolloServer({ schema, context: createContext }).listen( { port: process.env.PORT || 4000}, () =>
+  console.log(`🚀 Server ready at: http://localhost:${process.env.PORT}\n⭐️ 
+  See sample queries: http://pris.ly/e/js/graphql-sdl-first#3-using-the-graphql-api`,
+  ),
+)
